@@ -1,0 +1,66 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'DyFT'",
+      "cargo": {
+        "args": ["build", "--bin=dyft", "--package=master"],
+        "filter": {
+          "name": "dyft",
+          "kind": "bin"
+        }
+      },
+      "env": {
+        "RUST_BACKTRACE": "1",
+        "MASTER_DATA_DIR": "data/processed/",
+        "MASTER_QUERY_DIR": "data/query/",
+        "MASTER_RESULT_DIR": "results/"
+      },
+      "args": [
+        "-d",
+        "porto-5000.parquet",
+        "--q",
+        "porto-query-1.parquet",
+        "-c",
+        "dyft-porto-1.toml",
+        "-n",
+        "1000"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'FRESH'",
+      "cargo": {
+        "args": ["build", "--bin=fresh", "--package=master"],
+        "filter": {
+          "name": "fresh",
+          "kind": "bin"
+        }
+      },
+      "env": {
+        "RUST_BACKTRACE": "1",
+        "MASTER_DATA_DIR": "data/processed/",
+        "MASTER_QUERY_DIR": "data/query/",
+        "MASTER_RESULT_DIR": "results/"
+      },
+      "args": [
+        "-d",
+        "porto-5000.parquet",
+        "-q",
+        "porto-query-1.parquet",
+        "-c",
+        "fresh-porto-1.toml",
+        "-n",
+        "1000"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

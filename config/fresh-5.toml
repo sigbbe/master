@@ -1,0 +1,9 @@
+[index]
+distance = 0.01124183201
+verify_fraction = 0.25
+
+[lsh]
+l = 128
+k = 4
+resolution = 0.08993465615
+seed = 0

@@ -1,0 +1,59 @@
+[package]
+name = "master"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "dyft"
+path = "src/dyft_index.rs"
+
+[[bin]]
+name = "fresh"
+path = "src/fresh_index.rs"
+
+[[bench]]
+name = "dyft_bench"
+harness = false
+
+[[bench]]
+name = "fresh_bench"
+harness = false
+
+[dependencies]
+geo = "0.28.0"
+rayon = "1.9.0"
+serde = { version = "1.0.197", features = ["std", "derive"] }
+serde_derive = "1.0.197"
+serde_json = "1.0.115"
+toml = "0.8.12"
+rmp-serde = "1.1.2"
+lazy_static = "1.4.0"
+rand = { version = "0.8.5", features = ["default"] }
+num-traits = "0.2.18"
+nalgebra = "0.32.4"
+anyhow = { version = "1.0.81", features = ["std"] }
+bitvec = "1.0.1"
+itertools = "0.13.0"
+parquet = { version = "51.0.0", features = ["arrow"] }
+arrow = "51.0.0"
+clap = { version = "4.5.4", features = ["derive"] }
+indexmap = "2.2.6"
+sysinfo = "0.30.12"
+get-size = { version = "0.1.4", features = ["derive"] }
+
+[dev-dependencies]
+criterion = { version = "0.5.1", features = ["html_reports", "plotters"] }
+iai = "0.1.1"
+
+
+[profile.release]
+lto = "thin"
+opt-level = 3
+codegen-units = 1
+debug = true
+
+[profile.bench]
+lto = true
+debug = true

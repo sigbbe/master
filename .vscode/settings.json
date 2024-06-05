@@ -1,0 +1,27 @@
+{
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+  "rust-analyzer.linkedProjects": ["./Cargo.toml"],
+  "rust-analyzer.showUnlinkedFileNotification": false,
+  "rust-analyzer.showDependenciesExplorer": true,
+  "rust-analyzer.files.excludeDirs": [
+    "./notebooks",
+    "./target",
+    "./results",
+    "./src/dyft/constants/ham_tables"
+  ],
+  "files.watcherExclude": {
+    "./notebooks": true,
+    "./target": true,
+    "./results": true,
+    "./src/dyft/constants/ham_tables/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  }
+}

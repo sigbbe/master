@@ -1,0 +1,13 @@
+tqdm==4.65.0
+msgpack==1.0.8
+folium==0.15.1
+geopy==2.4.1
+pandas==2.2.1
+graphviz==0.20.1
+polyline==2.0.2
+matplotlib==3.8.0
+numpy==1.26.4
+fastparquet==2024.2.0
+pyarrow==15.0.0
+similaritymeasures==1.1.0
+scikit-learn==1.4.1.post1
